@@ -1,0 +1,100 @@
+﻿<Window x:Class="kursADO.AddWin.AddDoctor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursADO.AddWin" xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="AddDoctor" Height="750" Width="850">
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="70"/>
+        <RowDefinition/>
+        <RowDefinition Height="70"/>
+    </Grid.RowDefinitions>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Foreground="#808080" FontSize="45" FontWeight="Bold">Новый доктор</TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,10,0" Grid.Row="1">
+        <Grid Name="gridMain">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Orientation="Vertical" VerticalAlignment="Center">
+                <Button Background="White" Width="200" Height="200" BorderThickness="0" Click="addPhoto_click">
+                    <Image  Height="200" Width="200" Source="../img/add.png" x:Name="img" />
+                </Button>
+            </StackPanel>
+            <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" BorderBrush="#cccccc" BorderThickness="5" Padding="10" CornerRadius="7" Margin="0,0,0,15">
+
+                <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="5">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0"  FontSize="20" Margin="0,10,0,10" Name="name">Имя:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,10,0,10" FontSize="20" Name="lstName">Фамилия:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,10,0,10" FontSize="20" Name="date">Дата рождения:</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,10,0,10" FontSize="20" Name="phone">Номер телефона:</TextBlock>
+                        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,10,0,10" FontSize="20" Name="categ">Категория:</TextBlock>
+                        <ComboBox Name="findCateg" Grid.Row="4" Grid.Column="1" IsTextSearchEnabled="False" IsEnabled="True" FontSize="20"/>
+
+
+                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="FirstName" Padding="0,10,0,10"     FontSize="20" ></TextBox>
+                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="LastName" Padding="0,10,0,10"      FontSize="20"></TextBox>
+                        <wpfx:MaskedTextBox   Mask="+38(000) 000-0000" Grid.Row="3" Grid.Column="1" x:Name="Phone" Padding="0,10,0,10"         FontSize="20"/>
+                    <DatePicker x:Name="BirthDate" Grid.Row="2" Grid.Column="1" FontSize="20" SelectedDateFormat="Short"></DatePicker>
+
+                </Grid>
+            </Border>
+                <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,10" HorizontalAlignment="Center">
+                    <TextBlock Text="Авторизация" FontSize="30" Foreground="#808080"/>
+                </StackPanel>
+                <TextBlock Grid.Row="6" Grid.Column="0" Margin="50,10,0,10" FontSize="20">Login:</TextBlock>
+                <TextBlock Grid.Row="7" Grid.Column="0" Margin="50,10,0,10" FontSize="20">Пароль:</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="0" Margin="50,10,0,10" FontSize="20">Повторите пароль:</TextBlock>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtLog" Padding="0,10,0,10" FontSize="20" LostFocus="checkLog_focus"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="txtPas" Padding="0,10,0,10" FontSize="20"></TextBox>
+                <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtRepPas" TextChanged="checkPass_chahge" Padding="0,10,0,10" FontSize="20"></TextBox>
+            
+
+           
+
+        </Grid>
+    </StackPanel>
+    <Grid Background="#3399ff" Grid.Row="2" Grid.ColumnSpan="2" >
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+            <Button IsDefault="True" Click="accept_click"  FontSize="20" Width="200" Padding="5" Background="#3399ff" BorderBrush="#99ccff" BorderThickness="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../img/ok_img.png" Width="40"/>
+                    <TextBlock Text="Сохранить"  FontWeight="Medium" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White"/>
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+    </Grid>
+</Window>

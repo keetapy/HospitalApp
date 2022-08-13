@@ -1,0 +1,67 @@
+﻿<Window x:Class="kursADO.DetailsWin.CategoryInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursADO.DetailsWin"
+        mc:Ignorable="d"
+        Title="CategoryInfo" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <Grid Name="gridMain">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" FontSize="20">Название:</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" FontSize="20">Отделение:</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" FontSize="20">Кол-во врачей:</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" FontSize="20">Болезни:</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1"  FontSize="20" Margin="5" Text="{Binding Name}"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="2"  FontSize="20" Margin="5" Name="Doctors"/>
+                <TextBlock Grid.Column="1" Grid.Row="1"  FontSize="20" Margin="5" Text="{Binding Department}"/>
+                <ListBox Grid.Column="1" Grid.Row="3" x:Name="findDisease" HorizontalContentAlignment="Stretch" ScrollViewer.CanContentScroll="True" Height="230" BorderThickness="0" SelectionChanged="Disease_click" FontSize="20">
+
+                </ListBox>
+            </Grid>
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <ListView x:Name="lvInfo" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch" MouseDoubleClick="detailsDoctor_click">
+                <ListView.View>
+                    <GridView x:Name="info">
+                        <GridViewColumn Header="Id"                  DisplayMemberBinding="{Binding Id}"         Width="30"/>
+                        <GridViewColumn Header="Имя"                 DisplayMemberBinding="{Binding FirstName}"  Width="110"/>
+                        <GridViewColumn Header="Фамилия"             DisplayMemberBinding="{Binding LastName}"   Width="110"/>
+                        <GridViewColumn Header="Дата рождения"       DisplayMemberBinding="{Binding BirthDate}"  Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid Background="#3399ff" Grid.Row="1" Grid.ColumnSpan="2" >
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                <Button IsDefault="True" Click="accept_click"  FontSize="20" Width="200" Padding="5" Background="#3399ff" BorderBrush="#99ccff" BorderThickness="0">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../img/ok_img.png" Width="40"/>
+                        <TextBlock Text="OK" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

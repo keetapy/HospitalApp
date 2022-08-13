@@ -1,0 +1,113 @@
+﻿<Window x:Class="kursADO.MainWindowForDoctor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kursADO"
+        mc:Ignorable="d"
+        Title="MainWindowForDoctor" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate  x:Key="PatientsTemplate" x:Name="patientsList">
+            <StackPanel x:Name="patients">
+                <Border BorderBrush="#3399ff" Background="#3399ff" BorderThickness="1" Padding="10" CornerRadius="7" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image  Height="50" Width="50" Source="img/patients_list.png" />
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="10,0,0,0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" TextBlock.Foreground="White">
+                                <TextBlock Text="{Binding FirstName}" FontSize="25" Margin="0,0,5,0" Name="txtName"/>
+                                <TextBlock Text="{Binding LastName}" FontSize="25" Margin="5,0,0,0" Name="txtLName"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" TextBlock.Foreground="#99ccff">
+                                <TextBlock Text="{Binding Disease}" FontSize="15" Name="txtMoreInfo"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate  x:Key="DiseaseTemplate" >
+            <StackPanel>
+                <Border BorderBrush="#3399ff" Background="#3399ff" BorderThickness="1" Padding="10" CornerRadius="7" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image  Height="50" Width="50" Source="img/disease.png" />
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="10,0,0,0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" TextBlock.Foreground="White">
+                                <TextBlock Text="{Binding Name}" FontSize="30" Margin="0,0,5,0" Name="txtName"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" TextBlock.Foreground="#99ccff">
+                                <TextBlock Text="{Binding Category}" FontSize="15" Name="txtMoreInfo"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0"  Background="#3399ff" >
+        <StackPanel  VerticalAlignment="Center">
+            <StackPanel Background="#3399ff">
+                <Button Height="80" Click="doctor_Click" Background="#3399ff" BorderThickness="0" MouseDoubleClick="editDoctor_click">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="img/doctor_img.png" Width="50" Margin="5,0,0,0"></Image>
+                        <TextBlock Text="Личный кабинет" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Background="#3399ff">
+                <Button Height="80"  Click="patient_Click" Background="#3399ff" BorderThickness="0" MouseDoubleClick="addPatient_click">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="img/patient_img.png" Width="50" Margin="5,0,0,0"></Image>
+                        <TextBlock Text="Пациенты" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Background="#3399ff">
+                <Button Height="80" Click="disease_Click" Background="#3399ff" BorderThickness="0" MouseDoubleClick="addDisease_click">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="img/disease_img.png" Width="50" Margin="5,0,0,0"></Image>
+                        <TextBlock Text="Болезни" Foreground="White" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+                <StackPanel Background="#3399ff">
+                    <Button Height="80" Click="stat_click" Background="#3399ff" BorderThickness="0">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="img/graph.png" Width="50" Margin="5,0,0,0"></Image>
+                            <TextBlock Text="Статистика" Foreground="White" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="0" Background="#e6e6e6">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1" Background="#e6e6e6">
+                <Grid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Удалить" Click="delete_click"/>
+                        <MenuItem Header="Изменить" Click="edit_click"/>
+                    </ContextMenu>
+                </Grid.ContextMenu>
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40"  Margin="5" Background="#e6e6e6">
+                    <Image Source="img/f.png" Width="25" Margin="5,0,5,0"></Image>
+                    <Border BorderBrush="#3399ff"  BorderThickness="0" Padding="1" CornerRadius="15" Margin="5" Background="White">
+                        <TextBox Width="500" TextChanged="txtFind_txtchanged" Name="txtFind" BorderThickness="0" FontSize="20" Margin="10,0,10,0"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+            
+            <ListBox Grid.Row="1" x:Name="lvInfo"  Background="#e6e6e6"  ItemTemplate="{DynamicResource PatientsTemplate}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" MouseDoubleClick="mainDetails_click"/>
+        </Grid>
+    </Grid>
+</Window>
