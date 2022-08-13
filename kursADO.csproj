@@ -359,11 +359,11 @@
     <Resource Include="img\close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\Presentation\image_2022-08-13_11-51-52.png" />
-    <Resource Include="img\Presentation\image_2022-08-13_11-53-00.png" />
-    <Resource Include="img\Presentation\image_2022-08-13_11-53-31.png" />
-    <Resource Include="img\Presentation\image_2022-08-13_11-54-02.png" />
-    <Resource Include="img\Presentation\image_2022-08-13_11-54-48.png" />
+    <Resource Include="img\Presentation\mainWin.png" />
+    <Resource Include="img\Presentation\patientInfo.png" />
+    <Resource Include="img\Presentation\subMenu.png" />
+    <Resource Include="img\Presentation\patientInfoEditor.png" />
+    <Resource Include="img\Presentation\statistics.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

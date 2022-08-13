@@ -12,8 +12,10 @@
 ```bash
  <connectionStrings>
     <add name="FullHospitalDB" connectionString="Data Source=[your computer]\SQLEXPRESS;Integrated Security=true;Initial Catalog=FullHospitalDB" providerName="System.Data.SqlClient"/>
-  </connectionStrings>
+ </connectionStrings>
 ```
 ### Авторизація як головний адміністратор
 Login: root \
 Password: 111
+![Головна сторінка](./img/Presentation/mainWin.png)
+![Контекстне меню](./img/Presentation/mainWin.png)
