@@ -28,4 +28,6 @@ Password: 111 \
 ### Редактор інформація про пацієнта
 ![Редактор інформація про пацієнта](./img/Presentation/patientInfoEditor.png) \
 ### Статистика захворювань
-![Статистика захворювань](./img/Presentation/statistics.png)
+![Статистика захворювань](./img/Presentation/statistics.png) \
+### Діаграма структури даних
+![Діаграма структури даних](./img/Presentation/diagram.png)
