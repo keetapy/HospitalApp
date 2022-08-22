@@ -16,17 +16,17 @@
 ```
 ### Авторизація як головний адміністратор
 Login: root \
-Password: 111 \
+Password: 111 
 
 ## Скріншоти проекту
 ### Головна сторінка
-![Головна сторінка](./img/Presentation/mainWin.png) \
+![Головна сторінка](./img/Presentation/mainWin.png) 
 ### Контекстне меню
-![Контекстне меню](./img/Presentation/subMenu.png) \
+![Контекстне меню](./img/Presentation/subMenu.png) 
 ### Інформація про пацієнта
-![Інформація про пацієнта](./img/Presentation/patientInfo.png) \
+![Інформація про пацієнта](./img/Presentation/patientInfo.png) 
 ### Редактор інформація про пацієнта
-![Редактор інформація про пацієнта](./img/Presentation/patientInfoEditor.png) \
+![Редактор інформація про пацієнта](./img/Presentation/patientInfoEditor.png) 
 ### Статистика захворювань
 ![Статистика захворювань](./img/Presentation/statistics.png) \
 ### Діаграма структури даних
